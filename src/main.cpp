@@ -21,8 +21,8 @@ DallasTemperature sensors(&ourWire); //Se declara una variable u objeto para nue
 // Configuracion variables WatchDog
 
 //Datos Conexión Wifi
-const char* ssid = "FSH PRIVADA"; // Nombre de la red WiFi
-const char* password = "XarxaFsh2011"; // Contraseña de la red WiFi
+const char* ssid = "TU_SSID"; // Nombre de la red WiFi
+const char* password = "TU_PASSWORD"; // Contraseña de la red WiFi
 
 // Funcion conexion Wifi
 void connectToWiFi() { // Funcion conexion Wifi
@@ -48,7 +48,7 @@ void connectToWiFi() { // Funcion conexion Wifi
 // Configuracion cliente MQTT
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient); 
-char mqttServer[] ="10.1.1.130";
+char mqttServer[] ="TU SERVIDOR MQTT";
 int mqttPort = 1883;
 
 //Funcion de CallBack MQTT
@@ -75,8 +75,8 @@ void reconnect() {
       if (mqttClient.connect(clientId.c_str())) {
         Serial.print("Connectado a ");
         Serial.println(mqttServer);
-        // subscribe to topic
-        mqttClient.subscribe("cuina/nevera1/temperatura");
+        // subscribirse al topic
+        mqttClient.subscribe("TU TOPIC MQTT");
       }
       
   }
